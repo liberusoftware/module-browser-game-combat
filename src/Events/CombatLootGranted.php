@@ -7,9 +7,9 @@ namespace Liberu\BrowserGame\Combat\Events;
 use Illuminate\Contracts\Events\ShouldDispatchAfterCommit;
 use Illuminate\Foundation\Events\Dispatchable;
 
-final readonly class CombatBattleStarted implements ShouldDispatchAfterCommit
+final readonly class CombatLootGranted implements ShouldDispatchAfterCommit
 {
     use Dispatchable;
 
-    public function __construct(public string $battleId, public string $actorId, public string $opponentId) {}
+    public function __construct(public string $battleId, public string $actorId, public array $loot) {}
 }
